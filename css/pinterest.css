@@ -1,0 +1,97 @@
+.entry-content .pinterestUl {
+    overflow: hidden;
+    position: relative;
+    min-height:500px;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    margin-bottom: 10px;
+}
+.pinterestUl_loading {
+    background-image: url(../images/loader.gif);
+}
+#pinterestMore,
+#pinterestDone{
+    text-align: center;
+    color:#999;
+    display: none;
+}
+.pinterestUl .pinterestLi{
+    display: none;
+    width:48%;
+    width:-webkit-calc(50% - 20px);
+    width:calc(50% - 20px);	padding:0;
+    margin:0;
+    background-color: #fff;
+    list-style: none;
+    float:left;
+    overflow: hidden;
+    border: 1px solid #fff;
+    box-shadow: 0 2px 1px rgba(100, 100, 100, 0.3);
+    position: absolute;
+    z-index:1;
+    -webkit-transition: top 0.2s ease-out, left 0.2s ease-out,
+    box-shadow 0.2s ease-out, border 0.2s ease-out;
+    transition: top 0.2s ease-out, left 0.2s ease-out,
+    box-shadow 0.2s ease-out, border 0.2s ease-out;
+    font-size: 0;
+}
+.pinterestUl .pinterestLi:hover{
+    border: 1px solid #21759B;
+    background-color: #fafafa;
+    box-shadow: 0 2px 6px rgba(33, 117, 155, 0.5);
+}
+.col1 .pinterestLi{
+    width:96.8%;
+    width:-webkit-calc(100% - 6px);
+    width:calc(100% - 6px);	padding:0;
+}
+.col2 .pinterestLi{
+    width:48%;
+    width:-webkit-calc(50% - 12px);
+    width:calc(50% - 12px);	padding:0;
+}
+.col3 .pinterestLi{
+    width:31%;
+    width:-webkit-calc(33% - 12px);
+    width:calc(33% - 12px);	padding:0;
+}
+.col4 .pinterestLi{
+    width:23%;
+    width:-webkit-calc(25% - 16px);
+    width:calc(25% - 16px);	padding:0;
+}
+.col5 .pinterestLi{
+    width:18%;
+    width:-webkit-calc(20% - 12px);
+    width:calc(20% - 12px);	padding:0;
+}
+.pinterestUl .pinterestLi .comments-link {
+    padding: 10px;
+    font-size: 12px;
+    font-size: 0.865714286rem;
+}
+.pinterestUl .pinterestLi .pinterest_img {
+    display: inline-block;
+    width:100%;
+    font-size: 0;
+    min-height:40px;
+    background:#fff url(../images/loader_s.gif) center center no-repeat;
+}
+.pinterestUl .pinterestLi img {
+    width:100%;
+    height: auto;
+    display: inline-block;
+}
+.pinterestUl .pinterestLi a {
+    text-decoration: none;
+    font-size: 12px;
+    font-size: 0.865714286rem;
+}
+.pinterestUl .pinterestLi a:hover{
+    text-decoration:underline;
+}
+.pinterestUl .pinterestLi .pinterest_title {
+    text-decoration: none;
+    font-size:13px;
+    font-size:0.9285rem;
+}

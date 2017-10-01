@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+    <title>响应式瀑布流</title>
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <link rel="stylesheet" type="text/css" href="./css/pinterest.css">
+</head>
+<body>
+<div id="main" class="container cont-container">
+    <div class="entry-content">
+        <!--artworks list start-->
+        <ul class="pinterestUl" id="pinterestList">
+            <li class="pinterestLi"  v-for="(photo,index) in photos" :id="'artwork_'+(index+1)">
+                <a href="javascript:;" class="pinterest_img">
+                    <img :src="photo.src" alt="名称" class="ori"
+                         :data-original="photo.src" :id="'artwork_img_'+(index+1)">
+                </a>
+                <div class="comments-link">
+                    <a href="javascript:;" class="pinterest_title">{{photo.num}}</a>
+
+                    <p class="fr">
+                        <em :class="photo.collect | collect"></em>
+                        <a href="javascript:;"><span class="leave-reply">收藏</span></a>
+                    </p>
+
+                </div>
+                <!-- .comments-link -->
+            </li>
+        </ul>
+        <p id="pinterestMore" style="display: block;">----- 向下滚动加载更多 -----</p>
+
+        <p id="pinterestDone">----- 已全部加载完毕 -----</p>
+        <!--artworks list end-->
+
+    </div>
+</div>
+
+<!--<script src="https://unpkg.com/vue"></script>-->
+<script src="./js/vue.js"></script>
+<script>
+    new Vue({
+        el: '#pinterestList',
+        data: {
+            message: 'Hello Vue.js!',
+            photos: [
+                {num: '001',collect:true, src: './images/wrap1.jpg'},
+                {num: '002',collect:false, src: './images/login-bg1.jpg'},
+                {num: '003',collect:true, src: './images/wrap2.jpg'},
+                {num: '004',collect:true, src: './images/login-bg2.jpg'},
+                {num: '005',collect:true, src: './images/wrap3.jpg'},
+                {num: '006',collect:true, src: './images/login-bg3.jpg'},
+                {num: '007',collect:true, src: './images/wrap1.jpg'},
+                {num: '008',collect:true, src: './images/login-bg2.jpg'},
+                {num: '009',collect:true, src: './images/wrap2.jpg'},
+                {num: '010',collect:true, src: './images/login-bg2.jpg'},
+                {num: '011',collect:true, src: './images/wrap1.jpg'},
+                {num: '012',collect:true, src: './images/login-bg2.jpg'},
+                {num: '013',collect:true, src: './images/wrap3.jpg'},
+                {num: '014',collect:true, src: './images/login-bg2.jpg'},
+                {num: '015',collect:true, src: './images/login-bg2.jpg'},
+                {num: '016',collect:true, src: './images/login-bg2.jpg'},
+                {num: '017',collect:true, src: './images/wrap2.jpg'},
+                {num: '018',collect:true, src: './images/login-bg2.jpg'},
+                {num: '019',collect:true, src: './images/wrap1.jpg'},
+                {num: '020',collect:true, src: './images/login-bg2.jpg'},
+                {num: '001',collect:true, src: './images/wrap1.jpg'},
+                {num: '002',collect:false, src: './images/login-bg1.jpg'},
+                {num: '003',collect:false, src: './images/wrap2.jpg'},
+                {num: '004',collect:false, src: './images/login-bg2.jpg'},
+                {num: '005',collect:false, src: './images/wrap3.jpg'},
+                {num: '006',collect:false, src: './images/login-bg3.jpg'},
+                {num: '007',collect:false, src: './images/wrap1.jpg'},
+                {num: '008',collect:false, src: './images/login-bg2.jpg'},
+                {num: '009',collect:false, src: './images/wrap2.jpg'},
+                {num: '010',collect:false, src: './images/login-bg2.jpg'},
+                {num: '011',collect:false, src: './images/wrap1.jpg'},
+                {num: '012',collect:false, src: './images/login-bg2.jpg'},
+                {num: '013',collect:false, src: './images/wrap3.jpg'},
+                {num: '014',collect:false, src: './images/login-bg2.jpg'},
+                {num: '015',collect:false, src: './images/login-bg2.jpg'},
+                {num: '016',collect:false, src: './images/login-bg2.jpg'},
+                {num: '017',collect:false, src: './images/wrap2.jpg'},
+                {num: '018',collect:false, src: './images/login-bg2.jpg'},
+                {num: '019',collect:false, src: './images/wrap1.jpg'},
+                {num: '020',collect:false, src: './images/login-bg2.jpg'}
+            ]
+        },
+        filters: {
+            collect: function (value) {
+                if (value) {
+                    return 'emStar Star-qx'
+                }else{
+                    return 'emStar' ;
+                }
+            }
+        }
+
+    })
+</script>
+<script type="text/javascript" src="./js/global_brain.js"></script>
+<script type="text/javascript" src="./js/pinterest.js"></script>
+</body>
+</html>
